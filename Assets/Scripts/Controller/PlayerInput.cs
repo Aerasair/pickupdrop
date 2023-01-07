@@ -14,7 +14,8 @@ public class PlayerInput : MonoBehaviour
 
         if (_joystick.Horizontal != 0 || _joystick.Vertical != 0)
         {
-            _animator?.SetBool("isRunning", true);
+            transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
+            _animator.Play("Run");
         }
         else
             _animator?.SetBool("isRunning", false);

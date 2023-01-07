@@ -1,5 +1,7 @@
 # pickupdrop
-Hypercasual pickup &amp; drop. OOP Unity
+Hypercasual pickup &amp; drop. OOP Unity.
+Inheritance for portable items.
+Using interface.
 
 ## Assets
 

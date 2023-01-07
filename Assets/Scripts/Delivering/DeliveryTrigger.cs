@@ -4,6 +4,8 @@ using UnityEngine;
 public class DeliveryTrigger : MonoBehaviour
 {
     [SerializeField] private Transform _point;
+    [SerializeField] private TypeItems _type;
+
     private int _quantity = 0;
     private bool pause = true;
     private float _localTimer = 0;
@@ -13,7 +15,7 @@ public class DeliveryTrigger : MonoBehaviour
         if (pause) return;
         if (other.TryGetComponent(out BackPack backPack) == false) return;
 
-        IGRABABLE item = backPack.TryTake();
+        IGRABABLE item = backPack.TryTake(_type);
         if (item == null) return;
         _quantity++;
         item.GameObject.transform.parent = _point;
